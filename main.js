@@ -1,9 +1,16 @@
-let username = 'ahmed',
-    age = 20;
-
-let btn = {
-    username:username,
-    age:age
+function Notificationfunc () {
+    let notifica = new Notification('new message in project',{
+        body:'ahmed alaa this new message in notification'
+    })
 };
 
-console.log(btn)
+
+if(Notification.permission === 'granted') {
+    Notificationfunc();
+}else if(Notification.permission !=='denied') {
+    Notification.requestPermission().then((msg)=>{
+        if(msg === 'granted') {
+            Notificationfunc();
+        }
+    })
+}
