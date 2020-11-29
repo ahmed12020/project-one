@@ -1,16 +1,9 @@
-function Notificationfunc () {
-    let notifica = new Notification('new message in project',{
-        body:'ahmed alaa this new message in notification'
-    })
+let username = 'ahmed',
+    age = 20;
+
+let btn = {
+    username:username,
+    age:age
 };
 
-
-if(Notification.permission === 'granted') {
-    Notificationfunc();
-}else if(Notification.permission !=='denied') {
-    Notification.requestPermission().then((msg)=>{
-        if(msg === 'granted') {
-            Notificationfunc();
-        }
-    })
-}
+console.log(btn)
